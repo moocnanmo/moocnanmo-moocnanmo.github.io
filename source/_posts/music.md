@@ -20,7 +20,6 @@ categories: '项目类'
 
 > * [微信小程序官方文档](https://developers.weixin.qq.com/miniprogram/dev/api/)
 >*  [网易云接口调用文档](https://neteasecloudmusicapi.vercel.app/#/?id=%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3)
-> * 视频演示
 > * [源码](https://gitee.com/nanmooo/nan_music.git)
 
 

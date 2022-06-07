@@ -1,0 +1,194 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>【深信服实习】一些模块开放中的感悟 | NanMooo</title><meta name="keywords" content="包子"><meta name="author" content="南漠"><meta name="copyright" content="南漠"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="三个月的实习结束，非常不舍得我的逗比同事，我的560项目，希望项目能保质交付吧。感谢新哥导师和努力的自己，技术增长了很多，明白了很多，愚钝者多学，涅槃重生。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【深信服实习】一些模块开放中的感悟">
+<meta property="og:url" content="https://moocnanmo.github.io/2022/03/13/sfagain/index.html">
+<meta property="og:site_name" content="NanMooo">
+<meta property="og:description" content="三个月的实习结束，非常不舍得我的逗比同事，我的560项目，希望项目能保质交付吧。感谢新哥导师和努力的自己，技术增长了很多，明白了很多，愚钝者多学，涅槃重生。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/92d833800d364dca8ae9df4eb0c44d51.png">
+<meta property="article:published_time" content="2022-03-13T14:32:16.473Z">
+<meta property="article:modified_time" content="2022-04-20T12:59:11.822Z">
+<meta property="article:author" content="南漠">
+<meta property="article:tag" content="包子">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/92d833800d364dca8ae9df4eb0c44d51.png"><link rel="shortcut icon" href="https://static01.imgkr.com/temp/dc895d541e0c44daa437a96073b9be70.png"><link rel="canonical" href="https://moocnanmo.github.io/2022/03/13/sfagain/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '【深信服实习】一些模块开放中的感悟',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-04-20 20:59:11'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="//at.alicdn.com/t/font_2722836_nxnmdzok33b.css"><meta name="generator" content="Hexo 5.4.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://img-blog.csdnimg.cn/20210815175037722.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">20</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 生活</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/bangumis/"><i class="fa-fw iconfont icon-aixin"></i><span> 番剧</span></a></li><li><a class="site-page child" href="/books/"><i class="fa-fw iconfont icon-shuji"></i><span> 书籍</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://img-blog.csdnimg.cn/92d833800d364dca8ae9df4eb0c44d51.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">NanMooo</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 生活</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/bangumis/"><i class="fa-fw iconfont icon-aixin"></i><span> 番剧</span></a></li><li><a class="site-page child" href="/books/"><i class="fa-fw iconfont icon-shuji"></i><span> 书籍</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">【深信服实习】一些模块开放中的感悟</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-03-13T14:32:16.473Z" title="发表于 2022-03-13 22:32:16">2022-03-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-04-20T12:59:11.822Z" title="更新于 2022-04-20 20:59:11">2022-04-20</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Bug%E6%8E%92%E9%94%99/">Bug排错</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="【深信服实习】一些模块开放中的感悟"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><img src="https://img-blog.csdnimg.cn/ea105c3cec7b4b9994f9d97ee178c606.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/8605fac1cf5a4f95a05a284a6b5921fc.png" alt="在这里插入图片描述"></p>
+<blockquote>
+<p>领导问我，会给这次经历打几分，我说80。<br>导师和组长每隔一个月，就会问我，项目进度怎么样，有没有进步，我都不自觉跟他们说些掏心窝子的话。<br>三个月其实很累，身体明显感觉到了，但我却乐此不疲。我很喜欢我所在的团队，喜欢这的学术研发氛围，喜欢同事牛逼的技术，总想着有一天，期望成为新哥，凯哥，mzj那样厉害的人物</p>
+</blockquote>
+<h4 id="1-table-item不显示（没给table高度导致）"><a href="#1-table-item不显示（没给table高度导致）" class="headerlink" title="1.table-item不显示（没给table高度导致）"></a>1.table-item不显示（没给table高度导致）</h4><p>描述：数据是这样的[{},{}] 对象数组形式，能获取到数据，能成功给 <code>gridOptions</code> 赋值，但就是显示不出</p>
+<p><img src="https://img-blog.csdnimg.cn/37598aaadb8b4a73823b79e7517d3bcc.png#pic_center" alt="在这里插入图片描述"><br>修复思路：</p>
+<ul>
+<li>有自定义组件 <code>SfTableOptions</code> 和 <code>useTableOptions</code> hook辅助编码，最开始选第一个，打印 <code>gridOptions</code> 发现是undefined，然后用第二钟方法。</li>
+<li>后面觉得数据从获取到赋值这一整个过程都没问题，打印的结果都理想，就猜测是内容高度不够问题。</li>
+</ul>
+<p><font style="background:#c0d6cb;color=green"   size=4>其实像这种功能正常，数据流也很合理的错误，我犯过好几个，都在想是不是所用的hook或方法返回不对，往往遗忘了渲染的条件</font></p>
+<h4 id="2-组件复用过程"><a href="#2-组件复用过程" class="headerlink" title="2.组件复用过程"></a>2.组件复用过程</h4><p>描述：认证算法和加密算法非无选项都用到了密码和确认密码小组件，属于高频使用了，在没复用之前，遇到的BUG有</p>
+<ul>
+<li>因为在同一个form表单，ref值相同，这导致在做radio-switch表单检验的时候，校验规则不知现在监听的是那个item项，导致相同也会报错<br><img src="https://img-blog.csdnimg.cn/1a01b1877bd0416eabce6391485375ac.png#pic_center" alt="在这里插入图片描述"><img src="https://img-blog.csdnimg.cn/e819d42d60e340c2ab14bc58d2a13cea.png#pic_center" alt="在这里插入图片描述"><br>解决方案：抽离公共代码，复用成组件，想法是：把ref和对应的disabled条件传入，在组件中利用组件的setData和getSubmitData方法拿到传入和传出的数据，在通过watch监听那两个input的值，进行ref.value.validate()的标红告警清除</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;snmp-password</span><br><span class="line"> 	ref=<span class="string">&quot;X1&quot;</span></span><br><span class="line">:disabled=<span class="string">&quot;&quot;</span> /&gt;</span><br><span class="line">    </span><br><span class="line"><span class="comment">//清除校验</span></span><br><span class="line">watch(<span class="function">() =&gt;</span> [A, B], <span class="function"><span class="params">v</span> =&gt;</span>&#123;</span><br><span class="line">    ARef.value?.validate();</span><br><span class="line">    BRef.value?.validate();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>解决，但来了个需求，认证算法共用一个数据源，就是一个改，切换另一个radio也跟着改，用现在的组件实现比较复杂，因为得传入三个ref值，得对三个radio项进行判断，看是哪个传入，在渲染的时候对页面视图同步不方便，提交也多种分情况。</p>
+<p>于是，进一步优化：认证算法共用一个数据源，利用v-model传入数据对象进去，子组件在渲染，这样就省去了提交的判断。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//将数据对象通过v-model传入</span></span><br><span class="line"><span class="keyword">const</span> A = ref(&#123;</span><br><span class="line">    <span class="attr">password</span>: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    <span class="attr">confirmPassword</span>: <span class="string">&#x27;&#x27;</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//子组件</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//定义数据类型</span></span><br><span class="line"><span class="keyword">const</span> props = defineProps&lt;&#123;</span><br><span class="line">    <span class="attr">disabled</span>: boolean;</span><br><span class="line">    value: &#123;</span><br><span class="line">        <span class="attr">password</span>: string;</span><br><span class="line">        confirmPassword: string;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;&gt;();</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> emit = defineEmits([<span class="string">&#x27;input&#x27;</span>]);</span><br><span class="line"><span class="keyword">const</span> formData = computed(&#123;</span><br><span class="line">    <span class="function"><span class="title">get</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> props.value || &#123;</span><br><span class="line">            <span class="attr">password</span>: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">            <span class="attr">confirmPassword</span>: <span class="string">&#x27;&#x27;</span></span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="title">set</span>(<span class="params">v</span>)</span> &#123;</span><br><span class="line">        emit(<span class="string">&#x27;input&#x27;</span>, v);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>完美解决！</p>
+<h4 id="3-if-else条件判断性能优化"><a href="#3-if-else条件判断性能优化" class="headerlink" title="3.if else条件判断性能优化"></a>3.if else条件判断性能优化</h4><p>有这么一个场景：foreach遍历原始表格数组，对要编辑的表格行进行key排查，改行不能先找到改行数据，修改时再看有无重名地址，最后提交，下面是待优化的，用了很多if-else条件判断</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">newGridData.forEach(<span class="function">(<span class="params">value, index</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> trapArray = newGridData.map(<span class="function"><span class="params">item</span> =&gt;</span> item.trapAddr);</span><br><span class="line">        <span class="keyword">let</span> same = trapArray.find(<span class="function"><span class="params">value</span> =&gt;</span> value == data.trapAddr);</span><br><span class="line">        <span class="keyword">if</span> (value.trapAddr === id) &#123;</span><br><span class="line">            <span class="keyword">if</span> (data.trapAddr === id)&#123;</span><br><span class="line">                newGridData[index] = data;</span><br><span class="line">                isSend = <span class="literal">true</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (same === <span class="literal">undefined</span>) &#123;</span><br><span class="line">                newGridData[index] = data;</span><br><span class="line">                isSend = <span class="literal">true</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">       		fail();</span><br><span class="line">    	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>优化后，先对不满足的条件判断，接着退出，最后剩下的就是满足的，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (value.trapAddr !== id) &#123;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (data.trapAddr !== id &amp;&amp; <span class="keyword">typeof</span> same !== <span class="string">&#x27;undefined&#x27;</span>) &#123;</span><br><span class="line">    fail(tr(<span class="string">&#x27;snmpOptMgt.edit&#x27;</span>));</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line">newGridData[index] = data;</span><br><span class="line">isSend = <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-查找元素优化"><a href="#4-查找元素优化" class="headerlink" title="4.查找元素优化"></a>4.查找元素优化</h4><p>注释的写法太小白了，我要找的就是所选数组下标，为此专门写了个所有key的数组，在通过传入的key在这数组查找，在比对，饶了一大远路，忘记了findIndex方法，这波是忘记专门的API，拿到需求直接上手开造造成的逻辑缺陷。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.根据传入的id找到当前行的数据</span></span><br><span class="line"><span class="keyword">const</span> rowIndex = newGridData.findIndex(<span class="function"><span class="params">item</span> =&gt;</span> item.trapAddr === id);</span><br><span class="line"><span class="comment">// 2.判断当前修改数据的id是否存在于旧数据中</span></span><br><span class="line"><span class="keyword">const</span> sameIndex = newGridData.findIndex(<span class="function"><span class="params">item</span> =&gt;</span> item.trapAddr === data.trapAddr);</span><br><span class="line"><span class="keyword">if</span> (sameIndex !== -<span class="number">1</span>)&#123;</span><br><span class="line">    fail(tr(<span class="string">&#x27;snmpOptMgt.edit&#x27;</span>));</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 3.修改</span></span><br><span class="line">newGridData[rowIndex] = data;</span><br><span class="line">isSend = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// newGridData.forEach((value, index) =&gt; &#123;</span></span><br><span class="line"><span class="comment">//     // 定义一个表格所有数据key的数组</span></span><br><span class="line"><span class="comment">//     const trapArray = newGridData.map(item =&gt; item.trapAddr);</span></span><br><span class="line"><span class="comment">//     // 查找trapAddr,存在就返回数值没有返回undefined</span></span><br><span class="line"><span class="comment">//     let same = trapArray.find(value =&gt; value == data.trapAddr);</span></span><br><span class="line"><span class="comment">//     // 如果选中行的地址和原始数据的地址不同就退出</span></span><br><span class="line"><span class="comment">//     if (value.trapAddr !== id) &#123;</span></span><br><span class="line"><span class="comment">//         return;</span></span><br><span class="line"><span class="comment">//     &#125;</span></span><br><span class="line"><span class="comment">//     // 如果修改的地址存在原始数据中就退出</span></span><br><span class="line"><span class="comment">//     if (data.trapAddr !== id &amp;&amp; typeof same !== &#x27;undefined&#x27;) &#123;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//     &#125;</span></span><br><span class="line"><span class="comment">//     newGridData[index] = data;</span></span><br><span class="line"><span class="comment">//     isSend = true;</span></span><br><span class="line"><span class="comment">// &#125;);</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="5-radio选择优化"><a href="#5-radio选择优化" class="headerlink" title="5.radio选择优化"></a>5.radio选择优化</h4><p>有这么个条情况，两个radio的item项，有个change事件，只在由启用变为禁用的时候，才会触发确认弹框。</p>
+<p><img src="https://img-blog.csdnimg.cn/7119f10b6c9e4e9197ded78c3c3f7775.png#pic_center" alt="在这里插入图片描述"><br>于是我我把那两种情况写了个遍，由启用变为禁用，或者初始值为禁用，更改后（还写了变量判定）提交值变为禁用，才触发，很不错啊，思路很清晰。但这条件一判定下来，就又臭又长了。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">watch(<span class="function">()=&gt;</span>formData.value.enableSDK, <span class="function"><span class="params">v</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="comment">// 判断radio是否修改</span></span><br><span class="line">    <span class="keyword">if</span> (v !== oldData?.enableSDK &amp;&amp; oldData?.enableSDK !== <span class="literal">undefined</span>)&#123;</span><br><span class="line">        sendFlag.value = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> openApiChange = <span class="function">(<span class="params">enableSDK: string</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 启用：1，禁用：0</span></span><br><span class="line">    <span class="comment">// 进入判断的两种情况：由启用更改为禁用;由禁用改为启用在禁用</span></span><br><span class="line">    <span class="keyword">if</span> ((enableSDK === <span class="string">&#x27;0&#x27;</span> &amp;&amp; oldData?.enableSDK === <span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">        || (oldData?.enableSDK === <span class="string">&#x27;0&#x27;</span> &amp;&amp; sendFlag.value &amp;&amp; enableSDK === <span class="string">&#x27;0&#x27;</span>))&#123;</span><br><span class="line">        <span class="keyword">let</span> modal = useModal(tr(<span class="string">&#x27;sysCfg.mail.mail-title&#x27;</span>), &#123;</span><br><span class="line">            <span class="attr">title</span>: tr(<span class="string">&#x27;sysCfg.mail.confirm_title&#x27;</span>),</span><br><span class="line">            <span class="attr">width</span>: MODAL_SIZE_MAP.md,</span><br><span class="line">            <span class="attr">icon</span>: <span class="string">&#x27;confirm&#x27;</span>,</span><br><span class="line">            <span class="attr">autoDestroy</span>:<span class="literal">true</span>,</span><br><span class="line">            <span class="attr">submit</span>: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">                formData.value.enableSDK = <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">                modal.hide();</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="attr">cancel</span>: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">                formData.value.enableSDK = <span class="string">&#x27;1&#x27;</span>;</span><br><span class="line">                modal.hide();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        modal.open();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>咋一看没啥问题哈，很不错，但大有优化空间，预期判定触发有几种条件，不如判定触发的共性！</p>
+<p>说白了就是当处于禁用的时候触发嘛，那就优化！！</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> openApiChange = <span class="function">(<span class="params">enableSDK: string</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (enableSDK === <span class="string">&#x27;1&#x27;</span> || isInit)&#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> modal = useModal(&#123;</span><br><span class="line">        <span class="attr">submit</span>: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">            modal.hide();</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">cancel</span>: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">            formData.value.enableSDK = <span class="string">&#x27;1&#x27;</span>;</span><br><span class="line">            modal.hide();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    modal.open();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>这次我们直接判定为触发的条件，然后退出，剩下的就是要触发的了。</p>
+<p>首先第一种情况，就是判断当前是启用状态，或者第二种是获取数据失败的（定义个初始值为true的判断变量，当初次加载成功获取接口数据时置为false），这两都退出，剩下的就爆弹窗，甚至可以把确定按钮的赋值操作省去，简单明了。</p>
+<blockquote>
+<p>持续学习吧，去成为想成为的人，去想去的地方</p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">南漠</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://moocnanmo.github.io/2022/03/13/sfagain/">https://moocnanmo.github.io/2022/03/13/sfagain/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://moocnanmo.github.io" target="_blank">NanMooo</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://img-blog.csdnimg.cn/92d833800d364dca8ae9df4eb0c44d51.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/03/20/review/"><img class="prev-cover" src="https://img-blog.csdnimg.cn/5a6a1c3011a94bc1b856c77ca9a12492.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">总结一些良好的编码规范</div></div></a></div><div class="next-post pull-right"><a href="/2022/02/15/covid/"><img class="next-cover" src="https://img-blog.csdnimg.cn/1619accecb8748818949998abfddbb63.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">[vue2小项目]</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-table-item%E4%B8%8D%E6%98%BE%E7%A4%BA%EF%BC%88%E6%B2%A1%E7%BB%99table%E9%AB%98%E5%BA%A6%E5%AF%BC%E8%87%B4%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">1.table-item不显示（没给table高度导致）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E7%BB%84%E4%BB%B6%E5%A4%8D%E7%94%A8%E8%BF%87%E7%A8%8B"><span class="toc-number">2.</span> <span class="toc-text">2.组件复用过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-if-else%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="toc-number">3.</span> <span class="toc-text">3.if else条件判断性能优化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E6%9F%A5%E6%89%BE%E5%85%83%E7%B4%A0%E4%BC%98%E5%8C%96"><span class="toc-number">4.</span> <span class="toc-text">4.查找元素优化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-radio%E9%80%89%E6%8B%A9%E4%BC%98%E5%8C%96"><span class="toc-number">5.</span> <span class="toc-text">5.radio选择优化</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 南漠</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><div class="js-pjax"></div><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="false" data-text="好,好,学,习,为,国,效,力" data-fontsize="15px" data-random="false" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

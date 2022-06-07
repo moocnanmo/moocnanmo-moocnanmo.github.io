@@ -1,0 +1,177 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>基于项目开发的MonggoDB基本使用命令 | NanMooo</title><meta name="keywords" content="包子"><meta name="author" content="南漠"><meta name="copyright" content="南漠"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="基于项目开发的MonggoDB基本使用命令 1.关于MonggoDB的简单介绍 MongoDB 是由C++语言编写的，是一个基于分布式文件存储的开源数据库系统，旨在为WEB应用提供可扩展的高性能数据存储解决方案。MongoDB 将数据存储为一个文档，数据结构由键值(key&#x3D;&gt;value)对组成。   中文手册 官网 可视(图形)化管理工具下载地址【注意】在MongoDB版本中，是偶数：如3.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于项目开发的MonggoDB基本使用命令">
+<meta property="og:url" content="https://moocnanmo.github.io/2021/08/14/monggo/index.html">
+<meta property="og:site_name" content="NanMooo">
+<meta property="og:description" content="基于项目开发的MonggoDB基本使用命令 1.关于MonggoDB的简单介绍 MongoDB 是由C++语言编写的，是一个基于分布式文件存储的开源数据库系统，旨在为WEB应用提供可扩展的高性能数据存储解决方案。MongoDB 将数据存储为一个文档，数据结构由键值(key&#x3D;&gt;value)对组成。   中文手册 官网 可视(图形)化管理工具下载地址【注意】在MongoDB版本中，是偶数：如3.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210814204849758.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2ODkyNDky,size_16,color_FFFFFF,t_70">
+<meta property="article:published_time" content="2021-08-14T06:16:32.518Z">
+<meta property="article:modified_time" content="2021-08-16T14:46:10.034Z">
+<meta property="article:author" content="南漠">
+<meta property="article:tag" content="包子">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20210814204849758.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2ODkyNDky,size_16,color_FFFFFF,t_70"><link rel="shortcut icon" href="https://static01.imgkr.com/temp/dc895d541e0c44daa437a96073b9be70.png"><link rel="canonical" href="https://moocnanmo.github.io/2021/08/14/monggo/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '基于项目开发的MonggoDB基本使用命令',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-08-16 22:46:10'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="//at.alicdn.com/t/font_2722836_nxnmdzok33b.css"><meta name="generator" content="Hexo 5.4.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://img-blog.csdnimg.cn/20210815175037722.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">20</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 生活</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/bangumis/"><i class="fa-fw iconfont icon-aixin"></i><span> 番剧</span></a></li><li><a class="site-page child" href="/books/"><i class="fa-fw iconfont icon-shuji"></i><span> 书籍</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://img-blog.csdnimg.cn/20210814204849758.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2ODkyNDky,size_16,color_FFFFFF,t_70')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">NanMooo</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 生活</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/bangumis/"><i class="fa-fw iconfont icon-aixin"></i><span> 番剧</span></a></li><li><a class="site-page child" href="/books/"><i class="fa-fw iconfont icon-shuji"></i><span> 书籍</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">基于项目开发的MonggoDB基本使用命令</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-08-14T06:16:32.518Z" title="发表于 2021-08-14 14:16:32">2021-08-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-08-16T14:46:10.034Z" title="更新于 2021-08-16 22:46:10">2021-08-16</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%B7%A5%E5%85%B7%E7%B1%BB/">工具类</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="基于项目开发的MonggoDB基本使用命令"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="基于项目开发的MonggoDB基本使用命令"><a href="#基于项目开发的MonggoDB基本使用命令" class="headerlink" title="基于项目开发的MonggoDB基本使用命令"></a>基于项目开发的MonggoDB基本使用命令</h1><hr>
+<h3 id="1-关于MonggoDB的简单介绍"><a href="#1-关于MonggoDB的简单介绍" class="headerlink" title="1.关于MonggoDB的简单介绍"></a>1.关于MonggoDB的简单介绍</h3><blockquote>
+<p>MongoDB 是由C++语言编写的，是一个基于分布式文件存储的开源数据库系统，旨在为WEB应用提供可扩展的高性能数据存储解决方案。MongoDB 将数据存储为一个文档，数据结构由键值(key=&gt;value)对组成。</p>
+</blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.mongodb.org.cn/manual/">中文手册</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.mongodb.com/">官网</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.mongodb.com/try/download/enterprise">可视(图形)化管理工具下载地址</a><br><img src="https://img-blog.csdnimg.cn/20210602160140522.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rha2Vpbmdsb29w,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">【注意】在MongoDB版本中，是偶数：如3.2.x、3.4.x、3.6.x表示正式版(可用于生产环境)，奇数：3.1.x、3.3.x、3.5.x表示开发版。根据自己情况选择。</li>
+</ul>
+<hr>
+<h3 id="2-数据库连接"><a href="#2-数据库连接" class="headerlink" title="2.数据库连接"></a>2.数据库连接</h3><p>mongodb的默认端口为27017，连接时后面接数据库名称，<code>&#123; useNewUrlParser: true, useCreateIndex: true&#125;</code>在控制台过滤冗余信息。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 引入数据库处理模块</span></span><br><span class="line"><span class="keyword">const</span> mongoose = <span class="built_in">require</span>(<span class="string">&#x27;mongoose&#x27;</span>);</span><br><span class="line"><span class="comment">// 数据库连接</span></span><br><span class="line">mongoose.connect(<span class="string">&#x27;mongodb://localhost:27017/myweb&#x27;</span>, &#123; <span class="attr">useNewUrlParser</span>: <span class="literal">true</span>, <span class="attr">useCreateIndex</span>: <span class="literal">true</span>&#125;)</span><br><span class="line">	.then(<span class="function">() =&gt;</span> <span class="built_in">console</span>.log(<span class="string">&#x27;数据库连接成功&#x27;</span>))</span><br><span class="line">	.catch(<span class="function">() =&gt;</span> <span class="built_in">console</span>.log(<span class="string">&#x27;数据库连接失败&#x27;</span>));</span><br></pre></td></tr></table></figure>
+<p>创建其他集合,无非三步：</p>
+<ol>
+<li>导入monggodb模版</li>
+<li>创建集合规则</li>
+<li>创建集合，并导出</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mongoose = <span class="built_in">require</span>(<span class="string">&#x27;mongoose&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> userSchema = <span class="keyword">new</span> mongoose.Schema(&#123;</span><br><span class="line">    <span class="attr">username</span>: &#123;</span><br><span class="line">        <span class="attr">type</span>: <span class="built_in">String</span>,</span><br><span class="line">        <span class="attr">required</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="attr">minlength</span>: <span class="number">2</span>,</span><br><span class="line">        <span class="attr">maxlength</span>: <span class="number">20</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">email</span>: &#123;</span><br><span class="line">        <span class="attr">type</span>: <span class="built_in">String</span>,</span><br><span class="line">        <span class="attr">unique</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="attr">required</span>: <span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">password</span>: &#123;</span><br><span class="line">        <span class="attr">type</span>: <span class="built_in">String</span>,</span><br><span class="line">        <span class="attr">required</span>: <span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">role</span>: &#123;</span><br><span class="line">        <span class="attr">type</span>: <span class="built_in">String</span>,</span><br><span class="line">        <span class="attr">required</span>: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建集合</span></span><br><span class="line"><span class="keyword">const</span> User = mongoose.model(<span class="string">&#x27;User&#x27;</span>, userSchema);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    <span class="comment">// 将用户集合作为模块成员导出</span></span><br><span class="line">    User</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// createUser();// 初始化一个用户，</span></span><br><span class="line"><span class="comment">//此为我的一个blog用户集合，此处初始化一个用户，方便登陆</span></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">createUser</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> salt = <span class="keyword">await</span> bcrypt.genSalt(<span class="number">10</span>);</span><br><span class="line">    <span class="keyword">const</span> pass = <span class="keyword">await</span> bcrypt.hash(<span class="string">&#x27;11&#x27;</span>, salt);</span><br><span class="line">    <span class="keyword">const</span> user = <span class="keyword">await</span> User.create(&#123;</span><br><span class="line">        <span class="attr">username</span>: <span class="string">&#x27;nanmo&#x27;</span>,</span><br><span class="line">        <span class="attr">email</span>: <span class="string">&#x27;qq@qq.com&#x27;</span>,</span><br><span class="line">        <span class="attr">password</span>: pass,</span><br><span class="line">        <span class="attr">role</span>: <span class="string">&#x27;admin&#x27;</span>,</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20210602161213784.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rha2Vpbmdsb29w,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><img src="https://img-blog.csdnimg.cn/20210602162536839.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rha2Vpbmdsb29w,size_16,color_FFFFFF,t_70" alt="上述blog项目用户集合">某个blog项目用户集合，处于安全性考虑，将用户密吗通过<code>bcrypt.hash</code>加密处理。</p>
+<hr>
+<h3 id="3-基本数据库命令"><a href="#3-基本数据库命令" class="headerlink" title="3.基本数据库命令"></a>3.基本数据库命令</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">db.userl.find().help();		<span class="comment">//Help查看命令提示</span></span><br><span class="line">show dbs  <span class="comment">//查看数据库</span></span><br><span class="line">use student  <span class="comment">//切换数据库</span></span><br><span class="line">show collections  <span class="comment">//查看表</span></span><br><span class="line">db.version();  <span class="comment">//查看当前db版本</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//基于集合规则插入数据    --增删查改--</span></span><br><span class="line"><span class="comment">//添加用户</span></span><br><span class="line">db.集合名.insert(&#123;<span class="attr">name</span>:<span class="string">&quot;&quot;</span>,<span class="attr">age</span>:xx&#125;)</span><br><span class="line">db.user.insert(&#123;<span class="string">&quot;name&quot;</span>:<span class="string">&quot;suyl&quot;</span>,<span class="string">&quot;sex&quot;</span>:<span class="string">&quot;男&quot;</span>,<span class="attr">age</span>:<span class="number">32</span>&#125;);</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="comment">//删除用户</span></span><br><span class="line">db.集合名.remove(条件[,是否删除一条])</span><br><span class="line">db.users.remove(&#123;<span class="attr">age</span>: <span class="number">132</span>&#125;);</span><br><span class="line">db.user.remove(&#123;&#125;) 		<span class="comment">//删除表数据</span></span><br><span class="line">db.dropDatabase() 		<span class="comment">//删除当前数据库</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//查询用户</span></span><br><span class="line">db.集合名.find(&#123;查询条件&#125;,&#123;查询列&#125;)</span><br><span class="line">db.user.find(&#123;<span class="string">&quot;sex&quot;</span>:<span class="string">&quot;男&quot;</span>&#125;);  <span class="comment">//查找性别男</span></span><br><span class="line">db.user.find(&#123;<span class="attr">age</span>:&#123;<span class="attr">$gt</span>:<span class="number">10</span>&#125;&#125;)  <span class="comment">//查找年龄大10岁</span></span><br><span class="line"><span class="comment">//$gt大于 $gte 大于等于 $lt小于  $lte小于等于 $ne 不等于</span></span><br><span class="line">db.user.find(&#123;<span class="string">&quot;name&quot;</span>:<span class="regexp">/su/</span>&#125;);  <span class="comment">//查找名带su的用户</span></span><br><span class="line">db.user.find().limit(<span class="number">2</span>)      <span class="comment">//查找前两条数据</span></span><br><span class="line">db.user.find().skip(<span class="number">1</span>)		<span class="comment">//查找后一条数据</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//修改用户信息</span></span><br><span class="line">db.集合名.update(条件，新数据[,是否新增，是否修改多条])</span><br><span class="line">db.user.update(&#123;<span class="string">&quot;name&quot;</span>:<span class="string">&quot;张三&quot;</span>&#125;,&#123;<span class="string">&quot;name&quot;</span>:<span class="string">&quot;李四&quot;</span>,<span class="string">&quot;sex&quot;</span>:<span class="string">&quot;男&quot;</span>,<span class="attr">age</span>:<span class="number">32</span>&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//其他命令</span></span><br><span class="line">db.user.find(&#123;&#125;).sort(&#123;<span class="string">&quot;age&quot;</span>:<span class="number">1</span>&#125;)  <span class="comment">//升序</span></span><br><span class="line">db.user.find(&#123;&#125;).sort(&#123;<span class="string">&quot;age&quot;</span>:-<span class="number">1</span>&#125;)  <span class="comment">//降序</span></span><br><span class="line">db.student.getIndexes()		<span class="comment">//查看当前集合索引</span></span><br><span class="line">db.student.dropIndex(&#123;<span class="string">&quot;name&quot;</span>:<span class="number">1</span>&#125;) 		<span class="comment">//删除索引</span></span><br></pre></td></tr></table></figure>
+
+<p>到此，完毕</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">南漠</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://moocnanmo.github.io/2021/08/14/monggo/">https://moocnanmo.github.io/2021/08/14/monggo/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://moocnanmo.github.io" target="_blank">NanMooo</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://img-blog.csdnimg.cn/20210814204849758.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2ODkyNDky,size_16,color_FFFFFF,t_70" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/08/14/vue1/"><img class="prev-cover" src="https://img-blog.csdnimg.cn/2021081420214666.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Vue结合文档的笔记整理-上篇</div></div></a></div><div class="next-post pull-right"><a href="/2021/08/14/nvm/"><img class="next-cover" src="https://img-blog.csdnimg.cn/20210814202145495.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2ODkyNDky,size_16,color_FFFFFF,t_70" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">使用nvm下载切换各node版本教程</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E7%9A%84MonggoDB%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">1.</span> <span class="toc-text">基于项目开发的MonggoDB基本使用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%85%B3%E4%BA%8EMonggoDB%E7%9A%84%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.关于MonggoDB的简单介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5"><span class="toc-number">1.0.2.</span> <span class="toc-text">2.数据库连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%BA%93%E5%91%BD%E4%BB%A4"><span class="toc-number">1.0.3.</span> <span class="toc-text">3.基本数据库命令</span></a></li></ol></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 南漠</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><div class="js-pjax"></div><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="false" data-text="好,好,学,习,为,国,效,力" data-fontsize="15px" data-random="false" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

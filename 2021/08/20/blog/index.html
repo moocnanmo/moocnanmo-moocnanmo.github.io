@@ -1,0 +1,198 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>记录下使用hexo框架搭建博客和踩过的坑 | NanMooo</title><meta name="keywords" content="包子"><meta name="author" content="南漠"><meta name="copyright" content="南漠"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="整个博客从开发到遇到的主要bug的解决过程，最大的感受：这排错思路有待提高，有些坑躺了近十遍还是觉得那没问题，换个角度想问题思路就有了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记录下使用hexo框架搭建博客和踩过的坑">
+<meta property="og:url" content="https://moocnanmo.github.io/2021/08/20/blog/index.html">
+<meta property="og:site_name" content="NanMooo">
+<meta property="og:description" content="整个博客从开发到遇到的主要bug的解决过程，最大的感受：这排错思路有待提高，有些坑躺了近十遍还是觉得那没问题，换个角度想问题思路就有了。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210814202145968.jpg">
+<meta property="article:published_time" content="2021-08-20T15:27:43.183Z">
+<meta property="article:modified_time" content="2021-08-21T15:48:21.908Z">
+<meta property="article:author" content="南漠">
+<meta property="article:tag" content="包子">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20210814202145968.jpg"><link rel="shortcut icon" href="https://static01.imgkr.com/temp/dc895d541e0c44daa437a96073b9be70.png"><link rel="canonical" href="https://moocnanmo.github.io/2021/08/20/blog/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '记录下使用hexo框架搭建博客和踩过的坑',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-08-21 23:48:21'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="//at.alicdn.com/t/font_2722836_nxnmdzok33b.css"><meta name="generator" content="Hexo 5.4.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://img-blog.csdnimg.cn/20210815175037722.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">20</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 生活</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/bangumis/"><i class="fa-fw iconfont icon-aixin"></i><span> 番剧</span></a></li><li><a class="site-page child" href="/books/"><i class="fa-fw iconfont icon-shuji"></i><span> 书籍</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://img-blog.csdnimg.cn/20210814202145968.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">NanMooo</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 生活</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/bangumis/"><i class="fa-fw iconfont icon-aixin"></i><span> 番剧</span></a></li><li><a class="site-page child" href="/books/"><i class="fa-fw iconfont icon-shuji"></i><span> 书籍</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">记录下使用hexo框架搭建博客和踩过的坑</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-08-20T15:27:43.183Z" title="发表于 2021-08-20 23:27:43">2021-08-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-08-21T15:48:21.908Z" title="更新于 2021-08-21 23:48:21">2021-08-21</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Bug%E6%8E%92%E9%94%99/">Bug排错</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="记录下使用hexo框架搭建博客和踩过的坑"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="记录下使用hexo框架搭建博客和踩过的坑"><a href="#记录下使用hexo框架搭建博客和踩过的坑" class="headerlink" title="记录下使用hexo框架搭建博客和踩过的坑"></a>记录下使用hexo框架搭建博客和踩过的坑</h1><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><hr>
+<p>由于经常使用csdn,博客园，简书来查阅问题的解决方案，然后开始在 CSDN 中记录些所得经验和避坑忠告，但因为广告太多和样式不满意，便萌生了自己搭建个博客的想法。之后便了解到一些搭建用的框架平台:<code>Hexo</code> <code>Hugo</code> （对新手很友好），Vue开发者可以使用 <code>VuePress</code>，<code>react</code> 开发者可以使用 <code>Gatsby</code>。</p>
+<h3 id="我猜测大部分读者觉得开发一个博客会有以下顾虑"><a href="#我猜测大部分读者觉得开发一个博客会有以下顾虑" class="headerlink" title="我猜测大部分读者觉得开发一个博客会有以下顾虑"></a>我猜测大部分读者觉得开发一个博客会有以下顾虑</h3><ol>
+<li><strong>搭个博客是不是得从零开始搭建，包括静态页面和交互效果，那会不会很麻烦</strong>（用上面框架即可拒绝造轮子）</li>
+<li><strong>建博客是不是要买域名然后备案在服务器</strong>（全程有白嫖的，托管到例如github，gitee，vercel上完成部署,；要买也行，XX云一个域名十几二十，服务器买学生机一年也不到一百）</li>
+<li><strong>搭建博客是不是要会专门的语言，还要会数据库</strong>（前端三件套加md语法就好，复杂点的要回数据库，某云可以可视化操作数据库，完成建表增删改查的基操）</li>
+<li><strong>要是搭博客出Bug了怎么办，你能帮帮我吗</strong>（不能，根据警告或提示找解决方法）</li>
+</ol>
+<h2 id="总结：只要想搭，办法有的是，甚至你还可以将白嫖贯彻到底"><a href="#总结：只要想搭，办法有的是，甚至你还可以将白嫖贯彻到底" class="headerlink" title="总结：只要想搭，办法有的是，甚至你还可以将白嫖贯彻到底"></a>总结：只要想搭，办法有的是，甚至你还可以将白嫖贯彻到底</h2><p>下面大致说下我的搭建博客的过程和踩过的坑，给后来者避雷</p>
+<hr>
+<h1 id="1-如何快速搭建一篇博客"><a href="#1-如何快速搭建一篇博客" class="headerlink" title="1.如何快速搭建一篇博客"></a>1.如何快速搭建一篇博客</h1><p> 第一步： 这里推荐去B站根据框架（可参考上述）搜“ 如何使用XXX搭建博客 ”，选个整个过程看起来还算<strong>完整的，近期</strong> 线下使用，嫌视频太长或喜欢看文档的也可以去平台上搜完整的搭建过。以<code>Hexo</code>为例，本地搭建过程我参考的是 <a target="_blank" rel="noopener" href="https://sunhwee.com/posts/6e8839eb.html#toc-heading-3">Hexo建站教程</a></p>
+<p> 第二步：大概看遍/读遍后，有编程基础的可以去所选框架的官网读使用文档，因为版本迭代更新快，你看到的或许不适用了；接着选好主题，再看主题的使用文档，一般都会很详细，每个组件，功能，模块的搭建使用都贴有使用说明，跟着做就行</p>
+<p> 第三步： 部署上线，这步很容易出错，每台真机的环境都不一样，以推到github来说，你可能会遇到网络问题，推送命令问题，开发工具环境问题等等，为解决一个bug而衍生出两个bug很正常，按下耐心找方法解决。</p>
+<p>  下面列举下部署静态网站的大致步骤：</p>
+<ul>
+<li><input disabled="" type="checkbox"> 有Git，nodejs环境</li>
+<li><input disabled="" type="checkbox"> 安装hexo，根目录初始化 hexo init、，和下载它的上传工具</li>
+<li><input disabled="" type="checkbox"> 根据主题文档，配置本地仓库主题，一般在系统配置文件_config.yml下修改themes：</li>
+<li><input disabled="" type="checkbox"> 上面那个是系统配置文件，还有个<strong>主题配置文件</strong> ，由于使用npm或git下载的方式不同，这文件位置也不同，<strong>看文档看文档看文档</strong>配置</li>
+<li><input disabled="" type="checkbox"> 根据主题配置时候，有些外链指向github，这时自己解决网络问题。配置不成功看github的Issues讨论区。</li>
+<li><input disabled="" type="checkbox"> 遇到本地加载不同步的，清理缓存（官方文档有）在启动</li>
+<li><input disabled="" type="checkbox"> 本地没问题，可以部署到pages上线了（<strong>注意</strong>：配置文件中root路径记得更改为： /），托管我选github，这段时间部署到码云容易涉嫌违规，排查违规词太难这就不推荐了。</li>
+</ul>
+<h1 id="2-踩过的坑以及解决方案"><a href="#2-踩过的坑以及解决方案" class="headerlink" title="2.踩过的坑以及解决方案"></a>2.踩过的坑以及解决方案</h1><h3 id="2-1网络问题的坑"><a href="#2-1网络问题的坑" class="headerlink" title="2.1网络问题的坑"></a>2.1网络问题的坑</h3><h4 id="坑1：网络延时10054、443错误"><a href="#坑1：网络延时10054、443错误" class="headerlink" title="坑1：网络延时10054、443错误"></a>坑1：网络延时10054、443错误</h4><p>大家都懂，不用点魔法，拉取推送总能因为网络延迟导致推送失败，具体为：<br><img src="https://img-blog.csdnimg.cn/bbc25095b02f4b17b3f49b8a44f5ff12.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rha2Vpbmdsb29w,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<ul>
+<li>fatal: unable to access‘<a target="_blank" rel="noopener" href="https://github/">https://github</a> . com/ xxx. github. io.git/‘: OpenSSL SSL read: Connection was reset, errno 10054</li>
+<li> fatal: unable to access ‘ <a target="_blank" rel="noopener" href="https://github/">https://github</a> . com/xxx . github.io.git/‘: Failed to connect to github.com port 443: Timed out</li>
+</ul>
+<h4 id="坑2：代理问题"><a href="#坑2：代理问题" class="headerlink" title="坑2：代理问题"></a>坑2：代理问题</h4><p>没有魔法的读者只能过会才上传了，当我开始掌握魔法时，为Git设置代理又出大问题（没注意SSR端口号），设置的过程是根据c<em>dn配置的，非常不可靠，配完后gitconfig文件是这样的：<br><img src="https://img-blog.csdnimg.cn/8556bed5a0164a76805304b5881c5d59.png" alt="在这里插入图片描述"><br>上传时自动吧https更改为git前导致推送失败<img src="https://img-blog.csdnimg.cn/806c1f823d334cb38da3619b0d35706a.png" alt="请添加图片描述"><img src="https://img-blog.csdnimg.cn/c835be0f28f9496dac3cd9d244b87b14.png" alt="在这里插入图片描述"></em>  fatal: remote error:<br>You can’t push to git://github . com/ xxx. github. io. git<br>Use https:/ / github . com/ xxx . github . io. git</p>
+<p>使用了set-url 强制把请求头更改为https也无济于事，预算取消全局代理配置，返回gitconfig文件查看，发现无效，于是把有关github的[ ] 配置行删除，重新配代理，找到SSR端口号，在下载个<strong>tortoiseGit</strong>管理器，在设置→Git→编辑全局.gitconfig替换域名<img src="https://img-blog.csdnimg.cn/0222a7af6fb04bd699dcb9f2fbb9e6ce.png" alt="请添加图片描述">这里耗时挺久的，为解决一个上传问题，找个工具产生一堆问题，好在都修复了</p>
+<h3 id="2-2部署时的坑"><a href="#2-2部署时的坑" class="headerlink" title="2.2部署时的坑"></a>2.2部署时的坑</h3><h4 id="坑3：上传文件问题"><a href="#坑3：上传文件问题" class="headerlink" title="坑3：上传文件问题"></a>坑3：上传文件问题</h4><p>我是这样保存仓库的：给github托管，码云实时保存仓库，所以完成一份，要给俩仓库推送，看效果和备份。然后就把整个文件同时推给俩仓库，发现github上样式文件老丢失，首页缺少index.html文件等错误。当时一时想不出那里错，本地运行好好的，为什么推上去就有问题，就觉得还是网络问题，到时传输时文件丢失，沿着这条错误的方向排错了很久，删了建删了建，无果才换方向。<br>最后发现，是我上传的文件不对，只需要上传打包生成好的public文件即可，也就是编译好的build文件，不需整个项目上传，往后部署到服务器也是同理。</p>
+<p>正确的文件布局：<br><img src="https://img-blog.csdnimg.cn/f955210734a14598bbe244afbcd3be3b.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rha2Vpbmdsb29w,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h4 id="坑4：public文件更新问题"><a href="#坑4：public文件更新问题" class="headerlink" title="坑4：public文件更新问题"></a>坑4：public文件更新问题</h4><p>在本地修改了_config.yml的系统配置文件后， <code>hexo clean</code> 清除缓存，和  <code>hexo g </code> 生成静态页面，在<code>hexo d </code> 上传后，在推送上去，发现g远程长裤的内容没发生该改变，试了多次无果发现还是删除重建简单暴力有效：删除后重输入命令，强制推送覆盖远程仓库内容即可</p>
+<h4 id="坑5：js、css等样式文件404问题"><a href="#坑5：js、css等样式文件404问题" class="headerlink" title="坑5：js、css等样式文件404问题"></a>坑5：js、css等样式文件404问题</h4><p>在上传到时候，加载出来的页面因为样式文件丢失，和本地差别太大，功能显示都有问题，这时候首先F12打开控制台看下报的什么错，根据错误索引到相关文件，发现样式的引用路径有问题，大问题，怎么显示的是我本地路径？</p>
+<p><img src="https://img-blog.csdnimg.cn/efa7db1750404e358b76670107b0c53d.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rha2Vpbmdsb29w,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<ul>
+<li>Failed to load resource: the server responded with a status of 404 ()</li>
+</ul>
+<p><strong>根据控制台报的错误定位问题！</strong>，发现404的几个文件都是因为路径问题，前缀是我本地的地址，这里应该用相对路径，于是我我想到配置文件有个root 属性，刚开始配置上，文档所示跟路径，我迷糊就填了本地的，404！于是乎我按照他的理解，填了远程仓库的，又是404！ 后来觉得index文件在根目录下，填个 ： ./ 应该可以，发现除了首页正常显示，其他还是404，我giao！在细细的捋了下思路，发现自己真傻，为什么不设置： / 让他自己寻找。果不其然，这次成功了</p>
+<h3 id="2-3-浏览器缓存问"><a href="#2-3-浏览器缓存问" class="headerlink" title="2.3 浏览器缓存问"></a>2.3 浏览器缓存问</h3><h4 id="坑6：页面404"><a href="#坑6：页面404" class="headerlink" title="坑6：页面404"></a>坑6：页面404</h4><p>页面404，查看设置的pages选项，发现没问题，已经生成子网，但页面就是重定向不到，于是想到，在这之前，我是删库重建了，而我又在本地生成重新上传，仓库的地址一样，会不会这页面是上个仓库的？于是过一小会刷新下果不其然出来了！<br><img src="https://img-blog.csdnimg.cn/a3b15df398cb45439c8d3a81367c364d.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rha2Vpbmdsb29w,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>同理的坑：在我配置好根路径确认无误后，按理说托管显示的网页和本地的应该一致，但是控制台报的错误还是和上次一致，定位错误文件，发现和我现在的仓库路径显示完全不一致，这明显是上次修改的，于是乎稍等刷新重新加载，看network，发现文件都在pending（等待）阶段，一会就正常显示啦！</p>
+<h3 id="2-4-奇奇怪怪的bug"><a href="#2-4-奇奇怪怪的bug" class="headerlink" title="2.4 奇奇怪怪的bug"></a>2.4 奇奇怪怪的bug</h3><h4 id="坑7：github不认识某些tag标签"><a href="#坑7：github不认识某些tag标签" class="headerlink" title="坑7：github不认识某些tag标签"></a>坑7：github不认识某些tag标签</h4><p><img src="https://img-blog.csdnimg.cn/df7770c363604274abff2bc473dffd57.png" alt="在这里插入图片描述"></p>
+<p>当时提交时github为黄灯，说明在工作流状态，报了这个说什么不认识这文件下的第一行标签，于是搜了很多方法，发现有一博主给出只需在前面加光合回车就回识别通过，具体为啥也不清楚，试了下发现这篇通过了，接着的下一篇又爆了，没办法老样子全部加回车，发现这地方的错误通过后，下一个标签有报错，当时挺晚困得不行睡了，第二早起床跑一边居然通过了，奇奇怪怪。</p>
+<p>工作流状态：<br><img src="https://img-blog.csdnimg.cn/ae3278bbaef04a208bbe756261e19b6f.png" alt="在这里插入图片描述"></p>
+<p>类似的错误：具体咋产生的我也不清楚，不过清理缓存后过会重新生成就没有了，那个标签显示是对的，只不过内包含了而已。<br><img src="https://img-blog.csdnimg.cn/64a73455e6e84a44970b1c0a293b0ce3.png" alt="在这里插入图片描述"></p>
+<ul>
+<li>Uncaught SyntaxError: Unexpected token ‘&lt;’</li>
+</ul>
+<h1 id="3-总结"><a href="#3-总结" class="headerlink" title="3 总结"></a>3 总结</h1><p>不管遇到什么bug,不要害怕，勇敢的面对它，加油！！</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">南漠</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://moocnanmo.github.io/2021/08/20/blog/">https://moocnanmo.github.io/2021/08/20/blog/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://moocnanmo.github.io" target="_blank">NanMooo</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://img-blog.csdnimg.cn/20210814202145968.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/08/23/music/"><img class="prev-cover" src="https://cn.bing.com/th?id=OHR.LittleBlueHeron_ZH-CN0892428603_1920x1080.jpg&amp;rf=LaDigue_1920x1080.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">仿网易云音乐的小程序项目（粗糙版）</div></div></a></div><div class="next-post pull-right"><a href="/2021/08/14/diansang/"><img class="next-cover" src="https://img-blog.csdnimg.cn/20210814204922436.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">传统前后端分离的电商后台管理系统项目</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%B0%E5%BD%95%E4%B8%8B%E4%BD%BF%E7%94%A8hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%92%8C%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91"><span class="toc-number">1.</span> <span class="toc-text">记录下使用hexo框架搭建博客和踩过的坑</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">2.</span> <span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%91%E7%8C%9C%E6%B5%8B%E5%A4%A7%E9%83%A8%E5%88%86%E8%AF%BB%E8%80%85%E8%A7%89%E5%BE%97%E5%BC%80%E5%8F%91%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2%E4%BC%9A%E6%9C%89%E4%BB%A5%E4%B8%8B%E9%A1%BE%E8%99%91"><span class="toc-number">2.0.1.</span> <span class="toc-text">我猜测大部分读者觉得开发一个博客会有以下顾虑</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A%E5%8F%AA%E8%A6%81%E6%83%B3%E6%90%AD%EF%BC%8C%E5%8A%9E%E6%B3%95%E6%9C%89%E7%9A%84%E6%98%AF%EF%BC%8C%E7%94%9A%E8%87%B3%E4%BD%A0%E8%BF%98%E5%8F%AF%E4%BB%A5%E5%B0%86%E7%99%BD%E5%AB%96%E8%B4%AF%E5%BD%BB%E5%88%B0%E5%BA%95"><span class="toc-number">2.1.</span> <span class="toc-text">总结：只要想搭，办法有的是，甚至你还可以将白嫖贯彻到底</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2"><span class="toc-number">3.</span> <span class="toc-text">1.如何快速搭建一篇博客</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91%E4%BB%A5%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">4.</span> <span class="toc-text">2.踩过的坑以及解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1%E7%BD%91%E7%BB%9C%E9%97%AE%E9%A2%98%E7%9A%84%E5%9D%91"><span class="toc-number">4.0.1.</span> <span class="toc-text">2.1网络问题的坑</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9D%911%EF%BC%9A%E7%BD%91%E7%BB%9C%E5%BB%B6%E6%97%B610054%E3%80%81443%E9%94%99%E8%AF%AF"><span class="toc-number">4.0.1.1.</span> <span class="toc-text">坑1：网络延时10054、443错误</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9D%912%EF%BC%9A%E4%BB%A3%E7%90%86%E9%97%AE%E9%A2%98"><span class="toc-number">4.0.1.2.</span> <span class="toc-text">坑2：代理问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2%E9%83%A8%E7%BD%B2%E6%97%B6%E7%9A%84%E5%9D%91"><span class="toc-number">4.0.2.</span> <span class="toc-text">2.2部署时的坑</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9D%913%EF%BC%9A%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E9%97%AE%E9%A2%98"><span class="toc-number">4.0.2.1.</span> <span class="toc-text">坑3：上传文件问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9D%914%EF%BC%9Apublic%E6%96%87%E4%BB%B6%E6%9B%B4%E6%96%B0%E9%97%AE%E9%A2%98"><span class="toc-number">4.0.2.2.</span> <span class="toc-text">坑4：public文件更新问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9D%915%EF%BC%9Ajs%E3%80%81css%E7%AD%89%E6%A0%B7%E5%BC%8F%E6%96%87%E4%BB%B6404%E9%97%AE%E9%A2%98"><span class="toc-number">4.0.2.3.</span> <span class="toc-text">坑5：js、css等样式文件404问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98%E9%97%AE"><span class="toc-number">4.0.3.</span> <span class="toc-text">2.3 浏览器缓存问</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9D%916%EF%BC%9A%E9%A1%B5%E9%9D%A2404"><span class="toc-number">4.0.3.1.</span> <span class="toc-text">坑6：页面404</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84bug"><span class="toc-number">4.0.4.</span> <span class="toc-text">2.4 奇奇怪怪的bug</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9D%917%EF%BC%9Agithub%E4%B8%8D%E8%AE%A4%E8%AF%86%E6%9F%90%E4%BA%9Btag%E6%A0%87%E7%AD%BE"><span class="toc-number">4.0.4.1.</span> <span class="toc-text">坑7：github不认识某些tag标签</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E6%80%BB%E7%BB%93"><span class="toc-number">5.</span> <span class="toc-text">3 总结</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 南漠</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><div class="js-pjax"></div><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="false" data-text="好,好,学,习,为,国,效,力" data-fontsize="15px" data-random="false" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
